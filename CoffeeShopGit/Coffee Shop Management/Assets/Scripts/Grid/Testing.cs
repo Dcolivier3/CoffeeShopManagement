@@ -8,7 +8,14 @@ public class Testing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Grid grid = new Grid(20, 10); // tests grid in Grid.cs
+        Grid grid = new Grid(4, 2, 10f); // tests grid in Grid.cs
+    }
+
+     private void Update() {
+        if (Input.GetMouseButtonDown(0))
+        {
+            
+        }
     }
 
     
