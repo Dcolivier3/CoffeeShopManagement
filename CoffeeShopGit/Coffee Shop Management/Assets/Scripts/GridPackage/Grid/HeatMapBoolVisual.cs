@@ -20,7 +20,7 @@ public class HeatMapBoolVisual : MonoBehaviour
         grid.OnGridValueChanged += Grid_OnGridValueChanged;
     }
 
-    private void Grid_OnGridValueChanged(object sender, Grid.OnGridValueChangedEventArgs e) {
+    private void Grid_OnGridValueChanged(object sender, Grid<bool>.OnGridValueChangedEventArgs e) {
         //UpdateHeatMapVisual();
         updateMesh = true;
     }
