@@ -5,7 +5,7 @@ using UnityEngine;
 // https://www.youtube.com/watch?v=alU04hvz6L4&list=PLzDRvYVwl53uhO8yhqxcyjDImRjO9W722&index=3
 public class PathNode : MonoBehaviour
 {
-     private Grid<PathNode> grid;
+    public Grid<PathNode> grid;
     public int x;
     public int y;
 

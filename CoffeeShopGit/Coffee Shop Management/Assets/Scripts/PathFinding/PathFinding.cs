@@ -61,10 +61,10 @@ public class PathFinding
             foreach (PathNode neighbourNode in GetNeighbourList(currentNode))
             {
                 if (closeList.Contains(neighbourNode)) continue; 
-                // if (!neighbourNode.isWalkable) {
-                //     closeList.Add(neighbourNode);
-                //     continue;
-                // }
+                if (!neighbourNode.isWalkable) {
+                    closeList.Add(neighbourNode);
+                    continue;
+                }
                 
                 int tentativeGCost = currentNode.gCost + CalculateDistanceCost(currentNode, neighbourNode);
                 if (tentativeGCost < neighbourNode.gCost) // cycle through different option when ever neighbour node become comes current node due to its gcost being lower than the current node
@@ -140,7 +140,7 @@ public class PathFinding
 
     private PathNode GetLowestFCostNode(List<PathNode> pathNodeList){
         PathNode lowestFCostNode = pathNodeList[0];
-        for (var i = 0; i < pathNodeList.Count; i++)
+        for (int i = 1; i < pathNodeList.Count; i++)
         {
             if (pathNodeList[i].fCost < lowestFCostNode.fCost)
             {
