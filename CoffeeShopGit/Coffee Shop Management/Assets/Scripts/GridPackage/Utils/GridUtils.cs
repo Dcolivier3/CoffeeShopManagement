@@ -10,6 +10,7 @@ namespace Jessy.CodeMonkey.Utils
 {
     public static class GridUtils 
 {
+    
 
      private static readonly Vector3 Vector3zero = Vector3.zero;
         private static readonly Vector3 Vector3one = Vector3.one;
@@ -77,6 +78,14 @@ namespace Jessy.CodeMonkey.Utils
         public static Vector3 GetMouseWorldPositionWithZ(Vector3 screenPosition, Camera worldCamera) {
             Vector3 worldPosition = worldCamera.ScreenToWorldPoint(screenPosition);
             return worldPosition;
+        }
+
+        private Vector3 GetMouseWorlPosition_Instance(){
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, 999f, mouseColliderLayerMask))
+            {
+                
+            }
         }
 }
 }
